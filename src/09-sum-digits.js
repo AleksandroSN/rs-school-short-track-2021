@@ -12,16 +12,11 @@
  */
 function getSumOfDigits(n) {
   // throw new Error('Not implemented');
-  let sum = Array.from(String(n))
+  const sum = Array.from(String(n))
     .map(Number)
     .reduce((ac, cur) => ac + cur, 0);
-  const temp = sum;
-  if (sum >= 10) {
-    sum = Array.from(String(temp))
-      .map(Number)
-      .reduce((ac, cur) => ac + cur, 0);
-  }
-  return sum;
+  if (sum < 10) return sum;
+  return getSumOfDigits(sum);
 }
 
 module.exports = getSumOfDigits;

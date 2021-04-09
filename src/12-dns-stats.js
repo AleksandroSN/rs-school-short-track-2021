@@ -22,7 +22,6 @@
  */
 function getDNSStats(domains) {
   // throw new Error('Not implemented');
-  //Решение влоб -_-
   if (domains.length < 1) return {};
   const obj = {};
   const j = domains[domains.length - 1].split('.').reverse();
